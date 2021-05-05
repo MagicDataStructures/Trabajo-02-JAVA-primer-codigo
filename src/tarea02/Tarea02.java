@@ -223,10 +223,7 @@ public class Tarea02 {
 
                     Pilaregistro.remove(pila_llegada);
                     Pilaregistro.add(pila_llegada,Pila_code);
-                    
-                    System.out.println(Con.get(PilaFutura-1));
-                    System.out.println(Pilaregistro.size());
-                    
+                                       
                     System.out.println("Pila Actual  "+ Con.get(PilaFutura -1));
                     
                     if(Con.get(PilaFutura-1).size() == 5){
