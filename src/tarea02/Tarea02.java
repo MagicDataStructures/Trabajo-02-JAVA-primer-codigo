@@ -162,10 +162,10 @@ public class Tarea02 {
                 if(Con.get(PilaPasada-1).isEmpty()){
                     PilaVacia.add(PilaPasada);
                 }                
-                else if(Con.get(PilaPasada-1).size() > 0 && Con.get(PilaPasada-1).size() < 5){
+                else if(Con.get(PilaPasada-1).size() == 4){
                     PilaCupo.add(PilaPasada);
-                    PilaVacia.remove(PilaVacia.indexOf(PilaPasada));
                 }
+
                 
                 
                 
@@ -219,8 +219,12 @@ public class Tarea02 {
                     Con.get(PilaFutura-1).add(Pila_code);
                     int pila_i_time = Con.get(PilaFutura - 1).indexOf(Pila_code);
                     int pila_llegada = ConPilas.indexOf(PilaFutura) + pila_i_time ;
+
+                    Pilaregistro.remove(pila_llegada);
                     Pilaregistro.add(pila_llegada,Pila_code);
+                    
                     System.out.println(Con.get(PilaFutura-1));
+                    System.out.println(Pilaregistro.size());
                     
                     System.out.println("Pila Actual  "+ Con.get(PilaFutura -1));
                     
