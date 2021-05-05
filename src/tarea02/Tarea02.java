@@ -3,11 +3,12 @@ import java.util.Scanner;
 import java.util.*;
 public class Tarea02 {
     public static void main(String[] args) {
-        System.out.println("Listas Contenedores y Vehiculos");
+        System.out.println("Aquí comienza el ordenamiento de contenedores, se comienza con un total de 988 contenedores");
+        System.out.println("Principalmente los 988 contenedores están identificados por un serial de la siguiente manera: ");
+        System.out.println("El dígito de la pila donde está ubicado menos uno (0,197) y su ubicación en la pila menos uno (0,4), Por ejemplo:");
+        
         Scanner entrada = new Scanner(System.in);
         LinkedList<String> contenedores = new LinkedList<String>();
-        
-        LinkedList<String> vehiculos = new LinkedList<String>();
         
         LinkedList<String> Pilaregistro = new LinkedList<String>();
         
@@ -23,8 +24,8 @@ public class Tarea02 {
         }
         for(int i = 0 ; i < 198 ; i++){
             for(int j = 0 ; j < 5; j++){
-                Con.get(i).add("C"+i+j);
-                Pilaregistro.add("C"+i+j);
+                Con.get(i).add(""+i+j);
+                Pilaregistro.add(""+i+j);
                 ConPilas.add(i+1);
             }
         }
@@ -46,17 +47,18 @@ public class Tarea02 {
             }
         }
         
-        System.out.println(Pilaregistro.size());
-        System.out.println(ConPilas.size());
         
         PilaVacia.add(200);
         PilaVacia.add(199);
         PilaCupo.add(198);
         
-        System.out.println(Con.get(11));
+        System.out.println("Contenedores pila 1: "+ Con.get(0));
+        System.out.println("Contenedores pila 50: "+ Con.get(49));
+        System.out.println("Contenedores pila 150: "+ Con.get(149));
+
         
         while(true){
-            System.out.println("Que desea hacer ?, Mover, Entregar o Agregar");
+            System.out.println("Qué función desea realizar ?, Mover, Entregar o Agregar");
             String x = entrada.next();
             if(x.equals("Mover") || x.equals("mover") || x.equals("MOVER")){
                 System.out.println("Dijite el codigo del contenedor que desee mover");
@@ -152,7 +154,6 @@ public class Tarea02 {
                 int pila_i_tama = Con.get(PilaPasada - 1).size();
                 System.out.println("El el contenedor con el codigo "+ Pila_code + " está en la pila  "+ PilaPasada);
                 Con.get(PilaPasada -1).remove(Pila_code);
-                System.out.println(Con.get(PilaPasada-1));
                 
                 Pilaregistro.remove(Pila_code);
                 Pilaregistro.add(z,"");
@@ -254,18 +255,19 @@ public class Tarea02 {
             String pregunta1 = entrada.next();
             
             if(pregunta1.equals("Si")   || pregunta1.equals("si") || pregunta1.equals("SI")){
-                System.out.println(Total);
+                System.out.println("El número total de contenedores es: "+Total);
             }
             
-            System.out.println("Desea acceder a la información de alguna pila de contenedores ?, en caso de que SI quiera debe poner (Si) sin parentesis y el número de la pila (1,200) ");
+            System.out.println("Desea acceder a la información de alguna pila de contenedores ?, en caso de que SI quiera, Conteste Si o No");
             String pregunta2 = entrada.next();
             if(pregunta2.equals("Si") || pregunta2.equals("SI") || pregunta2.equals("si")){
+                System.out.println("Dijite el número de la pila que quiere consultar, el numero debe ser de uno a docientos (1,200)");
                 int pre2 = entrada.nextInt();
                 while(pre2 > 200 || pre2 < 1){
                     System.out.println("Solo se permiten numeros de 1 a 200");
                     pre2 = entrada.nextInt();
                 }
-                System.out.println(Con.get(pre2-1));
+                System.out.println("Los contenedores en la pila "+ pre2 +" son "+Con.get(pre2-1));
             }
             
             System.out.println("Desea terminar con el proceso de ordenamiento de los contenedores y pasar al de los automoviles ?, Conteste Sí o No");
